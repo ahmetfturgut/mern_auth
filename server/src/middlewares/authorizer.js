@@ -10,14 +10,14 @@ exports.checkAuth = async (req, res, next) => {
 		const decodedToken = cryptUtil.decodeToken(token);
 
 		if (!decodedToken.isAdmin) {
-			const publicPages = [
-				'/product/',  
+			const userPages = [
+				'/product/getAllProduct',  
+			 
 			];
 
-			const authRequired = !publicPages.includes(req.path);
+			const adminRequired = !userPages.includes(req.path.split("/api/v1")[1]);
 
-			if (authRequired) {
-				console.log('Authorization failed 1');
+			if (adminRequired) { 
 
 				return res.status(401).send({
 					success: false,
