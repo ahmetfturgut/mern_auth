@@ -1,23 +1,7 @@
 const { userRepository } = require('../repository/repository.index');
 const { cryptUtil } = require('../utils/utils.index');
 const { stateEnums,userEnums } = require('../model/enums/enums.index'); 
-
-/**
- * @description Gets the all users
- *
- * @returns {Promise<{success: boolean, error: *} | {success: boolean, data: [*]}>}
- * {success: false, error: any} or {success: true, data: [users]}
- */
-exports.getAllUsers = async () => {
-	try {
-		const users = await userRepository.getAllUsers();
-
-		return { success: true, data: users };
-	} catch (error) {
-		throw { success: false, error: any };
-	}
-};
-
+ 
 /**
  * @description Gets user by id
  * @param id {property} User Id
@@ -55,24 +39,7 @@ exports.createUser = async user => {
 		throw { success: false, error: any };
 	}
 };
-
-/**
- * @description UpdateUser User
- * @param user {object} Object containing all required fields to
- * update user
- *
- * @returns {Promise<{success: boolean, error: *} | {success: boolean}>}
- * {success: false, error: any} or {success: true}
- */
-exports.updateUser = async user => {
-	try {
-		await userRepository.updateUser(user);
-
-		return { success: true };
-	} catch (error) {
-		throw { success: false, error: any };
-	}
-};
+ 
 
 /**
  * @description Authenticate user by email and password

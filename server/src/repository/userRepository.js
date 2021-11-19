@@ -1,7 +1,5 @@
 const { User } = require('../model/user');
-
  
-
 /**
  * @description Gets the all users
  * @param id {property} User Id

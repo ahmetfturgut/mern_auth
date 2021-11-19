@@ -32,34 +32,3 @@ exports.login = async (req, res, next) => {
 	next();
 };
  
-
-exports.register = async (req, res, next) => {
-	try {
-		const { name, email, password } = req.body;
-		const result = await userService.registerUser({ name, email, password });
-
-		if (!result.success) {
-			res.apiResponse = {
-				status: Status.NOT_ACCEPTABLE,
-				success: result.success,
-				message: result.error
-			};
-		} else {
-			res.apiResponse = {
-				status: Status.OK,
-				success: result.success,
-				message: 'Succesfull'
-			};
-		}
-	} catch (error) {
-		res.apiResponse = {
-			status: Status.BAD_REQUEST,
-			success: false,
-			error: error.message,
-			data: null,
-			message: 'Error'
-		};
-	}
-
-	next();
-}; 

@@ -9,20 +9,9 @@ exports.assignRoutes = app => {
 	 */
 	app.post(
 		requestUtil.getUrlPrefix('auth/login'),
-		// validate(authValidation.login),
+		validate(authValidation.login),
 		authController.login,
 		apiResponse.send
-	);  
-
-	/**
-	 * Register User
-	 */
-	app.post(
-		requestUtil.getUrlPrefix('auth/register'),
-		validate(authValidation.register),
-		authController.register,
-		apiResponse.send
-	);
-
+	);   
  
 };
