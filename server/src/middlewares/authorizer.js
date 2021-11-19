@@ -11,7 +11,7 @@ exports.checkAuth = async (req, res, next) => {
 
 		if (!decodedToken.isAdmin) {
 			const userPages = [
-				'/product/getAllProduct',  
+				'/product/getAllProduct/',  
 			 
 			];
 

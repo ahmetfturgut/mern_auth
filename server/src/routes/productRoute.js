@@ -52,7 +52,7 @@ exports.assignRoutes = app => {
 	 */
 	app.delete(
 		requestUtil.getUrlPrefix('product/delete/:id'),
-		validate(productValidation.deleteProduct),		
+		validate(productValidation.deleteProduct),
 		authorizer.checkAuth,
 		productController.deleteProduct,
 		apiResponse.send

@@ -81,16 +81,21 @@ const Home = (props) => {
 
 
             <div className="m-5">
+                <div className=" d-flex justify-content-start">
+                     
+                    {
+                        getSessionStorage("isAdmin") == "true" &&
+                        <button id="modelOpen" type="button" class="btn btn-success" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Ürün Ekle</button>
+                    }
+
+                </div>
                 <div className=" d-flex justify-content-end">
                     <button onClick={() => {
                         clearSessionStorage();
                         props.history.push("/");
 
                     }} type="button" className="btn btn-danger d-flex justify-content-end">LogOut</button>
-                    {
-                        getSessionStorage("isAdmin") == "true" &&
-                        <button id="modelOpen" type="button" class="btn btn-success" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Ürün Ekle</button>
-                    }
+                    
 
                 </div>
                 {productList?.length > 0 &&
