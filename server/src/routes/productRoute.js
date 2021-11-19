@@ -19,7 +19,7 @@ exports.assignRoutes = app => {
 	 */
 	app.get(
 		requestUtil.getUrlPrefix('product/:id'),
-		// validate(productValidation.getProduct),
+		validate(productValidation.getProduct),
 		authorizer.checkAuth,
 		productController.getProduct,
 		apiResponse.send
@@ -30,7 +30,7 @@ exports.assignRoutes = app => {
 	 */
 	app.put(
 		requestUtil.getUrlPrefix('product/update/:id'),
-		// validate(productValidation.updateProduct),
+		validate(productValidation.updateProduct),
 		authorizer.checkAuth,
 		productController.updateProduct,
 		apiResponse.send
@@ -41,7 +41,7 @@ exports.assignRoutes = app => {
 	 */
 	app.post(
 		requestUtil.getUrlPrefix('product/create'),
-		// validate(productValidation.createProduct),
+		validate(productValidation.createProduct),
 		authorizer.checkAuth,
 		productController.createProduct,
 		apiResponse.send
@@ -52,6 +52,7 @@ exports.assignRoutes = app => {
 	 */
 	app.delete(
 		requestUtil.getUrlPrefix('product/delete/:id'),
+		validate(productValidation.deleteProduct),		
 		authorizer.checkAuth,
 		productController.deleteProduct,
 		apiResponse.send

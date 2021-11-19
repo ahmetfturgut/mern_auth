@@ -16,21 +16,21 @@ const Home = (props) => {
             let products = [...productList];
             let updateProduct = await updateProductService(data);
             if (typeof updateProduct != "undefined") {
-              debugger
+
                 let currentElementIndex = products.findIndex((x) => x.id === updateProduct.id);
 
                 if (currentElementIndex === -1) {
                     return;
                 }
-    
+
                 products[currentElementIndex] = data;
-    
+
                 setProductList(products)
             }
-          
+
             document.getElementById("modalClose").click();
         } else {
-            debugger
+            delete data.id;
             let newProduct = await addProductService(data);
             if (typeof newProduct != "undefined") {
 
@@ -51,10 +51,10 @@ const Home = (props) => {
 
         let deletedProduct = await deleteProductService(product);
         if (typeof deletedProduct != "undefined") {
-            
+
             let products = [...productList];
             products = products.filter(p => p.id != product.id);
-    
+
             setProductList(products);
         }
 
