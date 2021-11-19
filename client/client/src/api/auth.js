@@ -1,15 +1,14 @@
-import axios from "axios";
-import { apiEndPoint } from '../constants/app';
+import { HttpTypes } from "../utils/enums";
+import {postData} from './network';
 import { setSessionStorage } from '../utils/storage';
+
 
 export const login = async (data) => {
 
-  try {
-    const result = await axios.post(`${apiEndPoint}auth/login`, data);
-   
+  try { 
+    let result = await postData("auth/login", HttpTypes.POST, data)
     
-    if (result.status==200) { 
-     
+    if (result.status==200) {  
       setSessionStorage("token",result.data.data.token);
       setSessionStorage("isAdmin",result.data.data.isAdmin);
       setSessionStorage("name",result.data.data.name);

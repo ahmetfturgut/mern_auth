@@ -18,7 +18,7 @@ const Table = ({ productList, editProduct, deleteProduct }) => {
                         productList?.map((item, index) => {
                             return (
                                 <tr>
-                                    <th scope="row">{index}</th>
+                                    <th scope="row">{index+1}</th>
                                     <td>{item.productName}</td>
                                     <td>{item.productDetail}</td>
                                     {getSessionStorage("isAdmin") == "true" && <td><button onClick={() => { editProduct(item) }} type="button" class="btn btn-secondary" >Edit</button></td>}

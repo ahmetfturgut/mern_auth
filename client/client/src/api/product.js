@@ -1,16 +1,18 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 import { apiEndPoint } from '../constants/app';
-import network from './network';
+import { HttpTypes } from "../utils/enums";
+import {postData} from './network';
 
 export const addProductService = async (data) => {
 
   try {
 
-
-    let result = await axios.post("product/create", data);
+ 
+    let result = await postData("product/create", HttpTypes.POST, data)
 
     if (result.status == 200) {
-
+      toast.success("Successful Transaction")
       return result.data.data;
     }
   } catch (error) {
@@ -21,13 +23,11 @@ export const addProductService = async (data) => {
 
 export const updateProductService = async (data) => {
 
-  try {
-
-
-    let result = await axios.put("product/update/"+data.id, data);
+  try { 
+    let result = await postData("product/update/"+data.id, HttpTypes.PUT, data) 
 
     if (result.status == 200) {
-
+      toast.success("Successful Transaction")
       return result.data.data;
     }
   } catch (error) {
@@ -45,7 +45,7 @@ export const deleteProductService = async (data) => {
     let result = await axios.delete("product/delete/"+data.id, data);
 
     if (result.status == 200) {
-
+      toast.success("Successful Transaction")
       return result.data.data;
     }
   } catch (error) {

@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect } from "react";
-import { login } from "../api/auth";
-
+import { login } from "../api/auth"; 
+import { toast } from "react-toastify";
 import { getSessionStorage } from "../utils/storage";
 
 const Login = (props) => {
@@ -13,9 +13,13 @@ const Login = (props) => {
       password,
     };
 
-    let user = await login(data); 
+    let user = await login(data);  
     if (user) {
-      props.history.push("/home");
+      toast.success("Successful Transaction")
+      setTimeout(function(){ 
+        props.history.push("/home"); 
+      }, 3000);
+      
     }
 
   };
@@ -81,6 +85,7 @@ const Login = (props) => {
             >
               Sign in
             </button>
+           
             <p className="mt-5 mb-3 text-muted">; 2017-2018</p>
           </form>
         </div>

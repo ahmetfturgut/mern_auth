@@ -16,7 +16,7 @@ const Home = (props) => {
             let products = [...productList];
             let updateProduct = await updateProductService(data);
             if (typeof updateProduct != "undefined") {
-              
+              debugger
                 let currentElementIndex = products.findIndex((x) => x.id === updateProduct.id);
 
                 if (currentElementIndex === -1) {
@@ -30,9 +30,9 @@ const Home = (props) => {
           
             document.getElementById("modalClose").click();
         } else {
-
+            debugger
             let newProduct = await addProductService(data);
-            if (typeof updateProduct != "undefined") {
+            if (typeof newProduct != "undefined") {
 
                 setProductList((oldArr) => [...oldArr, newProduct]);
             }
@@ -61,6 +61,7 @@ const Home = (props) => {
     }
 
     const fetchData = async () => {
+        debugger
         let product = await getProducts();
         setProductList(product)
     }
