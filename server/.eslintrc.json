@@ -1,0 +1,23 @@
+// {
+// 	"extends": ["airbnb-base","plugin:security/recommended", "plugin:prettier/recommended"],
+// 	"plugins": ["security","prettier"],
+// 	"parserOptions": {
+// 		"ecmaVersion": 2018
+// 	  },
+// 	"rules": {
+// 		"prettier/prettier": "error",
+// 		"prefer-template": "off",
+// 		"no-unused-vars": "warn",
+// 		"no-buffer-constructor": "off",
+// 		"consistent-return": "off",
+// 		"no-underscore-dangle": "warn",
+// 		"no-throw-literal": "off",
+// 		"no-useless-catch": "off",
+// 		"no-plusplus": "off",
+// 		"func-names": "off",
+// 		"no-console": "off",
+// 		"no-undef": "off",
+// 		"no-param-reassign": "off",
+// 		"arrow-body-style":"off"
+// 	}
+// }

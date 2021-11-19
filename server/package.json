@@ -1,0 +1,59 @@
+{
+	"name": "nodejs-restapi",
+	"description": "Boilerplate for API backends with Node.js and Express.",
+	"version": "1.0.0",
+	"author": "Ahmet Faruk TURGUT <ahmetfturgut@gmail.com>",
+	"repository": "https://github.com/ahmetfturgut/nodejs-server.git",
+	"license": "MIT",
+	"main": "server/server.js",
+	"engines": {
+		"node": ">=12.0.0"
+	},
+	"scripts": {
+		"start": "src/loaders/server.js",
+		"prettier-format": "prettier --config .prettierrc src/**/*.js --write",
+		"lint": "eslint ./src/ --ignore-path .gitignore --ignore-pattern internals/scripts",
+		"test": "nyc --reporter=html --reporter=text mocha test/**/*.test.js --timeout 10000npm --exit",
+		"test:coverage": "nyc report --reporter=text-lcov | coveralls"
+	},
+	"dependencies": {
+		"app-root-path": "^2.2.1",
+		"body-parser": "^1.19.0",
+		"cors": "^2.8.5",
+		"dotenv": "^8.1.0",
+		"express": "^4.17.1",
+		"express-mongo-sanitize": "^1.3.2",
+		"helmet": "^4.2.0",
+		"http-status": "^1.4.2",
+		"joi": "^17.3.0",
+		"jsonwebtoken": "^8.5.1",
+		"moment": "^2.24.0",
+		"mongo-sanitize": "^1.0.1",
+		"mongoose": "^5.0.7",
+		"node-cache": "^4.2.0",
+		"node-cache-promise": "^1.0.0",
+		"node-pre-gyp": "^0.13.0",
+		"nodemailer": "^6.4.6",
+		"random-base64-string": "^1.0.1",
+		"sanitize": "^2.1.0",
+		"useragent": "^2.3.0"
+	},
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"chai-http": "^4.3.0",
+		"coveralls": "^3.1.0",
+		"eslint": "^6.1.0",
+		"eslint-config-airbnb": "^18.0.1",
+		"eslint-config-prettier": "^6.5.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-prettier": "^3.1.1",
+		"eslint-plugin-security": "^1.4.0",
+		"husky": "^4.3.5",
+		"mocha": "^7.1.1",
+		"mocha-lcov-reporter": "^1.3.0",
+		"nyc": "^15.1.0",
+		"prettier": "^1.18.2",
+		"request": "^2.88.2",
+		"supertest": "^6.0.1"
+	}
+}
