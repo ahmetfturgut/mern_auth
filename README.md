@@ -1,19 +1,30 @@
 
-# client
+# Client
+```
 cd /client
 npm install
 npm start
+```
 
-#server 
 
+# Server 
+```
 cd /server
 npm install
 npm start
+```
 
+# Login Admin  
+```  
+email => admin@admin.com 
+password =>  123qweQWE@
+``` 
+ 
 
-login admin email => **admin@admin.com**
-login admin password => **123qweQWE@**
-
-login user email => **user1@user.com**
-login user password => **123qweQWE@**
+# Login User  
+```  
+email => user1@user.com 
+password =>  123qweQWE@
+``` 
+ 
 
