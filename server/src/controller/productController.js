@@ -108,8 +108,8 @@ exports.updateProduct = async (req, res, next) => {
 
 exports.deleteProduct = async (req, res, next) => {
 	try {
-		const data = req.params;
-		const result = await productService.deleteProduct(data);
+		const id = req.params.id;
+		const result = await productService.deleteProduct(id);
 
 		res.apiResponse = {
 			status: Status.OK,

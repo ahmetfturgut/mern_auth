@@ -38,9 +38,6 @@ const UserSchema = new Schema({
 	updatedDateTime: {
 		type: Date,
 		default: Date.now
-	}, 
-	verificationCode: {
-		type: String
 	},
 	salt: {
 		type: String

@@ -1,6 +1,6 @@
 const { productRepository } = require('../repository/repository.index');
- 
- 
+
+
 
 /**
  * @description Gets the all products
@@ -63,8 +63,8 @@ exports.createProduct = async product => {
  */
 exports.updateProduct = async (product) => {
 	try {
-		 await productRepository.updateProduct(product);
-		product =await this.getProduct(product.id);
+		await productRepository.updateProduct(product);
+		product = await this.getProduct(product.id);
 		return { success: true, data: product.data };
 	} catch (error) {
 		throw { success: false, error: any };
@@ -75,15 +75,14 @@ exports.updateProduct = async (product) => {
 
 /**
  * @description DeleteProduct Product
- * @param product {object} Object containing all required fields to
- * update product
+ * @param id {property} Product Id
  *
  * @returns {Promise<{success: boolean, error: *} | {success: boolean}>}
  * {success: false, error: any} or {success: true}
  */
- exports.deleteProduct = async (product) => {
+exports.deleteProduct = async id => {
 	try {
-		 await productRepository.deleteProduct(product); 
+		await productRepository.deleteProduct(id);
 		return { success: true };
 	} catch (error) {
 		throw { success: false, error: any };
@@ -92,5 +91,5 @@ exports.updateProduct = async (product) => {
 
 
 
- 
+
 

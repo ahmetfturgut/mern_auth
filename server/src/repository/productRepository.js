@@ -60,9 +60,9 @@ exports.updateProduct = async product => {
  * @param product {object} Object containing all required fields to
  * delete product
  */
- exports.deleteProduct = async product => {
+exports.deleteProduct = async id => {
 	try {
-		return await Product.deleteOne({ _id: product.id }, product);
+		return await Product.deleteOne({ _id: id });
 	} catch (error) {
 		throw error;
 	}

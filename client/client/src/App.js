@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,7 +17,7 @@ const App = () => {
       <Alert></Alert>
       <div>
         <Router>
-          <Switch> 
+          <Switch>
             <Route exact component={Login} path="/"></Route>
             <Route exact component={Home} path="/home"></Route>
           </Switch>

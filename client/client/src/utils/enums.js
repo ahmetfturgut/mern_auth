@@ -1,10 +1,8 @@
-module.exports = { 
-
+module.exports = {  
 	HttpTypes: {
 		POST: 'post',
 		GET: 'get', 
         PUT:'put',
-        DELETE:'delete'
-
+        DELETE:'delete' 
 	}
 };

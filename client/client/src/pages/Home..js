@@ -11,8 +11,8 @@ const Home = (props) => {
     const [productDto, setProductDto] = useState({})
 
     const productAction = async (data) => {
-
         if (data.id) {
+            //Update Product
             let products = [...productList];
             let updateProduct = await updateProductService(data);
             if (typeof updateProduct != "undefined") {
@@ -25,11 +25,12 @@ const Home = (props) => {
 
                 products[currentElementIndex] = data;
 
-                setProductList(products)
+                setProductList(products);
             }
 
             document.getElementById("modalClose").click();
         } else {
+            // Create Product
             delete data.id;
             let newProduct = await addProductService(data);
             if (typeof newProduct != "undefined") {
@@ -42,13 +43,15 @@ const Home = (props) => {
 
 
     }
+
     const editProduct = async (product) => {
+        // Open and Set Modal For Edit
         document.getElementById("modelOpen").click();
         setProductDto(product);
     }
 
     const deleteProduct = async (product) => {
-
+        // Delete Product
         let deletedProduct = await deleteProductService(product);
         if (typeof deletedProduct != "undefined") {
 
@@ -61,7 +64,7 @@ const Home = (props) => {
     }
 
     const fetchData = async () => {
-        debugger
+         //Get All Products
         let product = await getProducts();
         setProductList(product)
     }
@@ -77,9 +80,7 @@ const Home = (props) => {
     }, []);
 
     return (
-        <>
-
-
+        <> 
             <div className="m-5">
                 <div className=" d-flex justify-content-start">
                      

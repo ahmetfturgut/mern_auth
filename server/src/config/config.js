@@ -14,9 +14,5 @@ exports.config = {
 	token_config: {
 		secret: 'nodejsRestApi2020',
 		expiresIn: '2h'
-	},
-
-	client_config: {
-		host: process.env.CLIENT_HOST, 
 	}
 };

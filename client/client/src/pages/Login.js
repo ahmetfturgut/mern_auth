@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect } from "react";
-import { login } from "../api/auth"; 
+import { login } from "../api/auth";
 import { toast } from "react-toastify";
 import { getSessionStorage } from "../utils/storage";
 
@@ -7,26 +7,26 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async () => {
+  const handelLogin = async () => {
     let data = {
       email,
       password,
     };
 
-    let user = await login(data);  
+    let user = await login(data);
     if (user) {
-      toast.success("Successful Transaction")
-      setTimeout(function(){ 
-        props.history.push("/home"); 
-      }, 3000);
-      
+      toast.success("Successful Transaction");
+      setTimeout(function () {
+        props.history.push("/home");
+      }, 1000);
+
     }
 
   };
 
   useLayoutEffect(() => {
-    let token = getSessionStorage("token"); 
-    token && props.history.push("/home")
+    let token = getSessionStorage("token");
+    token && props.history.push("/home");
   })
 
   return (
@@ -46,7 +46,7 @@ const Login = (props) => {
         >
           <form className="form-signin mt-5">
             <img
-              className="mb-4"
+              className="m-4"
               src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg"
               alt=""
               width="72"
@@ -79,14 +79,13 @@ const Login = (props) => {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                handleSubmit();
+                handelLogin();
               }}
               className="btn btn-lg btn-primary btn-block"
             >
               Sign in
             </button>
-           
-            <p className="mt-5 mb-3 text-muted">; 2017-2018</p>
+ 
           </form>
         </div>
       </div>
