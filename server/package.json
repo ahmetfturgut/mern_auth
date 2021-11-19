@@ -10,7 +10,7 @@
 		"node": ">=12.0.0"
 	},
 	"scripts": {
-		"start": "src/loaders/server.js",
+		"start": "nodemon src/loaders/server.js",
 		"prettier-format": "prettier --config .prettierrc src/**/*.js --write",
 		"lint": "eslint ./src/ --ignore-path .gitignore --ignore-pattern internals/scripts",
 		"test": "nyc --reporter=html --reporter=text mocha test/**/*.test.js --timeout 10000npm --exit",
@@ -33,7 +33,7 @@
 		"node-cache": "^4.2.0",
 		"node-cache-promise": "^1.0.0",
 		"node-pre-gyp": "^0.13.0",
-		"nodemailer": "^6.4.6",
+		"nodemon": "^2.0.15",
 		"random-base64-string": "^1.0.1",
 		"sanitize": "^2.1.0",
 		"useragent": "^2.3.0"
