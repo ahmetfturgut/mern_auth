@@ -15,10 +15,10 @@ exports.getAllProducts = async () => {
 };
 
 /**
- * @description Gets the all products
+ * @description Gets the product
  * @param id {property} Product Id
- * @returns {Promise<[{products}]>}
- * product object array
+ * @returns {Promise<{product}>}
+ * product object
  */
 exports.getProduct = async id => {
 	try {
@@ -57,8 +57,7 @@ exports.updateProduct = async product => {
 
 /**
  * @description Delete Product
- * @param product {object} Object containing all required fields to
- * delete product
+ * @param id {property} Product Id
  */
 exports.deleteProduct = async id => {
 	try {

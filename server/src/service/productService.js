@@ -39,7 +39,7 @@ exports.getProduct = async id => {
  * @param product {object} Object containing all required fields to
  * create product
  *
- * @returns {Promise<{success: boolean, error: *} | {success: boolean}>}
+ * @returns {Promise<{success: boolean, error: *} | {success: boolean, data: result}>}
  * {success: false, error: any} or {success: true}
  */
 exports.createProduct = async product => {
@@ -58,8 +58,8 @@ exports.createProduct = async product => {
  * @param product {object} Object containing all required fields to
  * update product
  *
- * @returns {Promise<{success: boolean, error: *} | {success: boolean}>}
- * {success: false, error: any} or {success: true}
+ * @returns {Promise<{success: boolean, error: *} | {success: boolean, data:product}>}
+ * {success: false, error: any} or {success: true,data:product}
  */
 exports.updateProduct = async (product) => {
 	try {
