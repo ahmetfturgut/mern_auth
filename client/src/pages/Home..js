@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,useLayoutEffect} from "react";
 import { clearSessionStorage, getSessionStorage } from "../utils/storage";
 import { addProductService, getProducts, updateProductService, deleteProductService } from "../api/product";
 import Modal from '../component/Modal'
@@ -69,13 +69,17 @@ const Home = (props) => {
         setProductList(product)
     }
 
-    useEffect(() => {
-        let token = getSessionStorage("token");
+    
+  useLayoutEffect(() => {
+    let token = getSessionStorage("token");
         if (!token) {
             props.history.push("/");
             return
         }
+  })
 
+
+    useEffect(() => { 
         fetchData();
     }, []);
 
